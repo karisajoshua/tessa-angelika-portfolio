@@ -18,3 +18,16 @@ npm run dev
 ```bash
 npm run build
 ```
+
+
+## Deploy to Vercel
+
+This repository is configured for Vercel.
+
+- Framework: Vite
+- Build command: `npm run build`
+- Output directory: `dist`
+- Install command: `npm install`
+- SPA fallback routing is configured in `vercel.json`.
+
+Import the GitHub repository into Vercel and deploy. No environment variables are required for the current frontend.
