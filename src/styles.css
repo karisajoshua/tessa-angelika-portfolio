@@ -82,3 +82,13 @@ footer{background:#000!important;color:#b3b3b3!important;border-top:1px solid #2
 
 /* CV-backed credentials + experience */
 .credentials,.experience{padding:120px clamp(24px,7vw,110px);background:#000;border-top:1px solid #242424}.credentialGrid{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid #333;border-left:1px solid #333}.credentialGrid article{min-height:220px;padding:30px;border-right:1px solid #333;border-bottom:1px solid #333;background:#0a0a0a}.credentialGrid span{font-size:9px;letter-spacing:.16em;color:#b3b3b3}.credentialGrid h3{font-size:23px;font-weight:400;letter-spacing:-.03em;margin:48px 0 12px;color:#fff}.credentialGrid p{font-size:12px;color:#b3b3b3}.experienceList{border-top:1px solid #333}.experienceList>div{display:grid;grid-template-columns:160px 1fr 1fr;gap:30px;padding:24px 0;border-bottom:1px solid #333;align-items:center}.experienceList b{font-size:10px;letter-spacing:.1em;color:#b3b3b3}.experienceList span{font-size:18px;color:#fff}.experienceList small{font-size:12px;color:#b3b3b3;text-align:right}@media(max-width:800px){.credentials,.experience{padding-top:90px;padding-bottom:90px}.credentialGrid{grid-template-columns:1fr}.credentialGrid article{min-height:180px}.experienceList>div{grid-template-columns:1fr;gap:8px}.experienceList small{text-align:left}}
+
+
+/* Dusty-pink accent — restrained, editorial */
+:root{--dusty-pink:#d8b4b8;--dusty-pink-soft:#e4c6c9}
+.signal,.index,.caseType,.projectTop,.caseFacts span,.practiceGrid article>span,.credentialGrid span,.experienceList b{color:var(--dusty-pink)!important}
+.hero .kicker,.caseSteps b,.decisionGrid b{color:var(--dusty-pink)!important}
+a:focus-visible,button:focus-visible,[role="button"]:focus-visible{outline-color:var(--dusty-pink)!important}
+.project:hover h3,.quickLinks a:hover{color:var(--dusty-pink-soft)!important}
+.project:hover .chips span{background:var(--dusty-pink)!important;border-color:var(--dusty-pink)!important;color:#000!important}
+::selection{background:var(--dusty-pink);color:#000}
