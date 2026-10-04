@@ -73,3 +73,9 @@ footer{background:#000!important;color:#b3b3b3!important;border-top:1px solid #2
 @supports (content-visibility:auto){section{content-visibility:visible!important;contain-intrinsic-size:auto!important}}
 @supports (animation-timeline:view()){.heroPortrait,.aboutPortrait:before,.projectVisual:before{animation:none!important}}
 .projectVisual:before{display:none!important}
+
+/* Lightweight entrance motion: smooth without delaying rendering */
+.reveal{opacity:0!important;transform:translate3d(0,18px,0)!important;transition:opacity .52s cubic-bezier(.22,.61,.36,1),transform .52s cubic-bezier(.22,.61,.36,1)!important;will-change:opacity,transform}
+.reveal.is-visible{opacity:1!important;transform:translate3d(0,0,0)!important;will-change:auto}
+.project.reveal:nth-child(2n),.project.reveal:nth-child(3n){transition-delay:0!important}
+@media(prefers-reduced-motion:reduce){.reveal,.reveal.is-visible{opacity:1!important;transform:none!important;transition:none!important}}
