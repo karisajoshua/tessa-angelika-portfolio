@@ -32,7 +32,7 @@
 
 .projectCount{display:flex;justify-content:space-between;align-items:center;padding:0 2px 18px;color:#808080;font:500 9px Inter,ui-sans-serif,system-ui,sans-serif;letter-spacing:.12em;text-transform:uppercase}.projectAction{position:absolute;right:28px;top:335px;display:flex;align-items:center;gap:10px;color:#ffffff;font:500 9px Inter,ui-sans-serif,system-ui,sans-serif;letter-spacing:.12em;text-transform:uppercase;opacity:0;transform:translateY(8px);transition:.35s}.projectAction b{font-size:16px;font-weight:400}.project:hover .projectAction,.project:focus-within .projectAction{opacity:1;transform:translateY(0)}.recruiterCta{padding:100px clamp(24px,7vw,110px);background:#808080;border-bottom:1px solid var(--line);display:grid;grid-template-columns:.35fr .8fr .65fr;gap:50px;align-items:start}.recruiterCta h2{font:400 clamp(35px,4vw,58px)/1 Inter,ui-sans-serif,system-ui,sans-serif;letter-spacing:-.05em;margin:0 0 20px}.recruiterCta p{color:var(--muted);line-height:1.7;max-width:520px}.quickLinks{display:flex;flex-direction:column;border-top:1px solid #808080}.quickLinks a{text-decoration:none;padding:16px 4px;border-bottom:1px solid #808080;font-size:12px;color:#808080;transition:.25s}.quickLinks a:hover{padding-left:10px;color:#ffffff}@media(max-width:800px){.recruiterCta{grid-template-columns:1fr;gap:20px}.projectAction{position:static;opacity:1;transform:none;justify-content:flex-end;margin:12px 4px 0}.projectCount{align-items:flex-start;gap:20px}.projectCount span:last-child{text-align:right}}
 
-section{content-visibility:auto;contain-intrinsic-size:800px}.hero,.caseHero{content-visibility:visible}.project,.practiceGrid article{contain:layout paint style}
+.project,.practiceGrid article{contain:layout paint style}
 
 /* Monochrome editorial palette: black + white with restrained muted rose-gold accents */
 body{background:#000000;color:var(--ink)}
@@ -65,3 +65,11 @@ footer{background:#000!important;color:#b3b3b3!important;border-top:1px solid #2
 /* Hero reflow after removing portrait placeholder */
 @media(min-width:901px){.hero{min-height:auto!important;display:block!important;padding-top:clamp(70px,9vh,110px)!important}.hero .signal{margin-bottom:clamp(65px,9vh,110px)}.hero .kicker{margin:0 0 24px!important}.hero h1{max-width:1180px!important;font-size:clamp(72px,8.2vw,132px)!important}.heroBottom{display:grid!important;grid-template-columns:minmax(0,650px) auto!important;align-items:end!important;margin-top:clamp(65px,8vh,100px)!important;padding:28px 0!important}.path{margin-top:25px}.hero:after{display:none!important}}
 @media(max-width:900px){.hero{min-height:auto!important}.heroBottom{margin-top:55px}.heroPortrait{display:none!important}}
+
+/* Immediate-scroll rendering: content must never wait to appear */
+.reveal{opacity:1!important;transform:none!important;transition:none!important}
+.reveal.is-visible{opacity:1!important;transform:none!important}
+.project.reveal:nth-child(2n),.project.reveal:nth-child(3n){transition-delay:0!important}
+@supports (content-visibility:auto){section{content-visibility:visible!important;contain-intrinsic-size:auto!important}}
+@supports (animation-timeline:view()){.heroPortrait,.aboutPortrait:before,.projectVisual:before{animation:none!important}}
+.projectVisual:before{display:none!important}
