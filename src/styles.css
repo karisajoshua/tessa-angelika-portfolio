@@ -104,3 +104,26 @@ a:focus-visible,button:focus-visible,[role="button"]:focus-visible{outline-color
 .supplementalEvidence{padding:90px clamp(24px,7vw,110px);background:#000;border-top:1px solid #242424}
 .supplementalEvidence .mediaEvidence{max-width:1000px;margin-top:30px}
 @media(max-width:800px){.caseCover img{min-height:260px}.supplementalEvidence{padding-top:70px;padding-bottom:70px}}
+
+/* Preserve complete screenshots: UI evidence must never be cropped */
+.projectVisual:has(img),.caseCover:has(img),.mediaEvidence:has(img){
+  height:auto!important;
+  min-height:0!important;
+  aspect-ratio:auto!important;
+  background:#0a0a0a!important;
+}
+.projectVisual img,.caseCover img,.mediaEvidence img{
+  width:100%!important;
+  height:auto!important;
+  min-height:0!important;
+  max-height:none!important;
+  aspect-ratio:auto!important;
+  object-fit:contain!important;
+  object-position:center!important;
+}
+.projectVisual:has(img){padding:0!important}
+.caseCover:has(img){padding:0!important}
+.mediaEvidence img{display:block!important}
+@media(max-width:800px){
+  .caseCover img,.projectVisual img,.mediaEvidence img{height:auto!important;min-height:0!important}
+}
