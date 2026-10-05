@@ -127,3 +127,24 @@ a:focus-visible,button:focus-visible,[role="button"]:focus-visible{outline-color
 @media(max-width:800px){
   .caseCover img,.projectVisual img,.mediaEvidence img{height:auto!important;min-height:0!important}
 }
+
+/* Clean screenshot presentation — remove decorative rings/overlays */
+.projectVisual:has(img)::before,.projectVisual:has(img)::after,
+.caseCover:has(img)::before,.caseCover:has(img)::after,
+.mediaEvidence::before,.mediaEvidence::after{
+  content:none!important;
+  display:none!important;
+  border:0!important;
+  box-shadow:none!important;
+}
+.projectVisual:has(img),.caseCover:has(img),.mediaEvidence{
+  border-radius:0!important;
+  box-shadow:none!important;
+  outline:none!important;
+}
+.projectVisual:has(img) img,.caseCover:has(img) img,.mediaEvidence img{
+  border-radius:0!important;
+  box-shadow:none!important;
+  outline:none!important;
+  filter:none!important;
+}
